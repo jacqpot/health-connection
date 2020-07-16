@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+    <title>HealthConnection</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+
+ 
+  </head>
+  <body>
+  <%if logged_in?%>
+    <header class="top-nav">
+      <div class="navbar-fixed"> 
+          <nav>
+            <div class="nav-wrapper" style="background-color:#4fc3f7">
+              <a href="#" class="brand-logo"> <img src="/images/brand_logo.png" style="height:45px; margin-left:50px; margin-top:8px;"> </a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 50px;">
+                <li><a style="color:#01579b" href="/providers">Search Providers</a></li>
+                <li><a style="color:#01579b"href="/<%=session[:type]%>s/<%=current_user.id%>">My Profile</a></li>
+                <li><a style="color:#01579b"href="/logout">Log Out</a></li>
+              </ul>
+            </div>
+          </nav>
+      </div>
+    </header>
+  <%end%>
+    <div class="wrapper">
+
+        <%= yield %>
+
+      <footer class="branding">
+        <small>&copy; 2020 <strong>HealthConnection</strong></small>
+      </footer>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!--[if lt IE 7]>
+      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+    <![endif]-->
+        <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+  </body>
+</html>
