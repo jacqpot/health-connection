@@ -1,7 +1,12 @@
-<h1>  Welcome <%= @user.name %> </h1>
+<h1>  Welcome <%= @user.name.capitalize %> </h1>
  <br>
 
-<h2><a href = "/post/new">create blog post</a></h2>
-<h2><a href = "/post/index">My Blog posts</a></h2> 
-<p><a href="/user/logout">Logout</a></p>
+    <body>
+      <div class="container">
+        <!-- Page Content goes here -->
+        <a href = "/post/new"class='btn' style="background-color: #dee8d5; color: black">create blog post</a>
+        <a href = "/post/index"class='btn' style="background-color: #dee8d5; color: black">My Blog posts</a>
+        <a href="/user/logout"class='btn' style="background-color: #dee8d5; color: black">Logout</a>
 
+      </div>
+    </body>

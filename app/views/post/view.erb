@@ -3,10 +3,10 @@
 <%=@post.content%> <br>
 <div class="row">
         <div class="col"><form action="/post/<%=@post.id%>/delete" method="post">
-            <a href="/post/<%=@post.id%>/edit" class = "btn" id="edit post">edit post</a>
+            <a href="/post/<%=@post.id%>/edit" class = "btn" style="background-color: #ac92a6; color: black" id="edit post">edit post</a>
             <input type="hidden" id="hidden" name="_method"  value="DELETE">
-            <input type="submit" value="Delete Post" class = "btn" name="Delete Post" id="Delete Post">
-            <a href="/post/index" class = "btn" style="background-color: #ac92a6">My Posts</a>
+            <input type="submit" value="Delete Post" class = "btn" style="background-color: #ac92a6; color: black" name="Delete Post" id="Delete Post">
+            <a href="/post/index" class = "btn" style="background-color: #ac92a6; color: black">My Posts</a>
 
         </form></div>
 </div>

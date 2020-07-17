@@ -1,18 +1,15 @@
-<h1>Hi</h1>
-
-
 
 <div class="container">
     <h2>My Posts </h2>
-    <a href="/post/new" class="btn" >Create a new post</a>
+    <a href="/post/new" class="btn" style="background-color: #ac92a6; color: black">Create a new post</a>
     <div class="row">
 
         <div class="row">
             <%@user.each do |post|%>
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title"><a href="/post/<%=post.id%>"><%=post.title%></a></span>
-                    <p> <%=post.content%> </p>
+            <div class="card-panel hoverable" style="background-color: #dee8d5">
+                <div class="card-content" >
+                    <span class="card-title"><a href="/post/<%=post.id%>"><h3><%=post.title%></h3></a></span>
+                    <p class="truncate"> <%=post.content%> </p>
                 </div>
                 
             </div>
