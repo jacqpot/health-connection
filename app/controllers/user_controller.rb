@@ -23,6 +23,7 @@ class UserController < ApplicationController
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
             @session = session
+  
             erb :"/user/view"
         end
     end

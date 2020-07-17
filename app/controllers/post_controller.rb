@@ -3,7 +3,7 @@ class PostController < ApplicationController
 
     get "/post/index" do
       @user = current_user.post
-      erb :"/post/index"
+        erb :"/post/index"
     end
   
   
@@ -23,11 +23,12 @@ class PostController < ApplicationController
     get "/post/:id" do
       # if logged_in? 
       #   # binding.pry
-        @post = Post.find(params[:id])
+      @post = Post.find(params[:id])
+      if @post.user == current_user
         erb :"/post/view"
-      # else 
-      #   redirect to '/user/login'
-      # end
+      else 
+        redirect to '/user/view'
+      end
     end
   
   
