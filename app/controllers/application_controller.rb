@@ -20,6 +20,12 @@ class ApplicationController < Sinatra::Base
     def current_user
       User.find_by(id: session[:user_id]) if session[:user_id]
       
-		end
+    end
+    def logged_in_p? 
+      !!current_provider
+    end
+    def current_provider
+      Provider.find_by(id: session[:user_id]) if session[:user_id]
+    end
 	end
 end
