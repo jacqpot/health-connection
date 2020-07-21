@@ -22,11 +22,12 @@ class EduController < ApplicationController
         end
     end
     get '/edu/:id/edit' do 
-        if logged_in_p? 
+        if logged_in_p? && Edu.find_by(id: params[:id]).provider == current_provider
             @edu = Edu.find(params[:id])
             erb :'/edu/edit'
         else
-            erb :'/provider/index'
+            @provider = current_provider
+            erb :'/provider/view'
 
         end
     end

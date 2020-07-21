@@ -33,11 +33,12 @@ class PostController < ApplicationController
   
   
     get "/post/:id/edit" do
-      if logged_in?
+      if logged_in? && Post.find_by(id: params[:id]).user == current_user
         @post = Post.find(params[:id])
         erb :'/post/edit'
       else
-      erb :"/user/index"
+        @user = current_user
+      erb :"/user/view"
       end
     end
   

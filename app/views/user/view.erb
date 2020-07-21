@@ -5,9 +5,10 @@
       <div class="container">
         <!-- Page Content goes here -->
         <%if @user.provider%> 
-          <%=@user.provider.edu.each do |edu| %>
+          <%@user.provider.edu.each do |edu| %>
           <%=edu.title %>
           <%=edu.content %>
+          <%end%>
         <%end %>
         <a href = "/post/new"class='btn' style="background-color: #dee8d5; color: black">create blog post</a>
         <a href = "/post/index"class='btn' style="background-color: #dee8d5; color: black">My Blog posts</a>

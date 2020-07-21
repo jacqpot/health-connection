@@ -5,6 +5,7 @@ class UserController < ApplicationController
     end
 
     get '/user/signup' do
+        @provider = Provider.all 
         erb :"/user/new"
     end
 
@@ -29,7 +30,8 @@ class UserController < ApplicationController
     end
 
     post '/user/signup' do
-        @user = User.create(name: params[:name], password: params[:password])
+        @user = User.create(name: params[:name], password: params[:password], provider_id: params[:provider_id])
+        binding.pry
         erb :"/user/login"
     end
 
