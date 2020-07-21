@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>My Educational Blog posts </h2>
+    <a href="/edu/new" class="btn" style="background-color: #ac92a6; color: black">Create a new blog</a>
+    <div class="row">
+
+        <div class="row">
+            <%@provider.each do |edu|%>
+            <div class="card-panel hoverable" style="background-color: #dee8d5">
+                <div class="card-content" >
+                    <span class="card-title"><a href="/edu/<%=edu.id%>"><h3><%=edu.title%></h3></a></span>
+                    <p class="truncate"> <%=edu.content%> </p>
+                </div>
+                
+            </div>
+            <%end%>
+        </div>
+
+    </div>
+
+</div>
