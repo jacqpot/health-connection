@@ -21,6 +21,8 @@ class ApplicationController < Sinatra::Base
       User.find_by(id: session[:user_id]) if session[:user_id]
       
     end
+
+    
     def logged_in_p? 
       !!current_provider
     end

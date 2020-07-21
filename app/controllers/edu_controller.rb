@@ -41,7 +41,7 @@ class EduController < ApplicationController
         end
     end
     delete "/edu/:id/delete" do 
-        edu = Post.find(params[:id])
+        edu = Edu.find(params[:id])
         edu.destroy
         redirect "/edu/index"
     end
