@@ -3,6 +3,6 @@ class Provider < ActiveRecord::Base
     validates :name, presence: true, uniqueness: true 
     validates :title, presence: true 
     validates :password, presence: true 
-    
-    has_many :post 
+    has_many :user
+    has_many :edu  
 end

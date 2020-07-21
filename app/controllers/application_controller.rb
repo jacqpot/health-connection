@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
       !!current_provider
     end
     def current_provider
-      Provider.find_by(id: session[:user_id]) if session[:user_id]
+      Provider.find_by(id: session[:provider_id]) if session[:provider_id]
     end
 	end
 end

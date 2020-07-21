@@ -11,7 +11,7 @@ class ProviderController < ApplicationController
         erb :'/provider/view'
 
     end
-    post "provider/login" do 
+    post "/provider/login" do 
         @provider = Provider.find_by(:name => params[:name])
         if @provider && @provider.authenticate(params[:password])
             session[:provider_id] = @provider.id

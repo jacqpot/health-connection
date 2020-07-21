@@ -15,7 +15,7 @@ class EduController < ApplicationController
 
     get '/edu/:id' do 
         @edu = Edu.find(params[:id])
-        if @edu.user == current_provider
+        if @edu.provider == current_provider
             erb :'/edu/view'
         else
             redirect to '/provider/view'
@@ -35,9 +35,9 @@ class EduController < ApplicationController
         @edu = Edu.find(params[:id])
         @edu.content = (params[:content])
         if @edu.save
-            redirect to "/edu/#{edu.id}"
+            redirect to "/edu/#{@edu.id}"
         else
-            redirect "edu/#{edu.id}/edit"
+            redirect "edu/#{@edu.id}/edit"
         end
     end
     delete "/edu/:id/delete" do 
