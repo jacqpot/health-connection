@@ -1,0 +1,14 @@
+
+
+<h1><%=@edu.title%></h1>
+
+<div class="row">
+    <div class="col">
+        <form action="/edu/<%=@edu.id%>/delete" method="post">
+            <a href="/edu/<%=@edu.id%>/edit" class = "btn" style="background-color: #ac92a6; color: black" id="edit post">edit blog post</a>
+            <input type="hidden" id="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete Edu" class = "btn" style="background-color: #ac92a6; color: black" name="Delete Edu" id="Delete Edu">
+            <a href="/edu/index" class = "btn" style="background-color: #ac92a6; color: black">My Posts</a>
+        </form>
+    </div>
+</div>
