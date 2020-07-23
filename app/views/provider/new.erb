@@ -1,15 +1,25 @@
 <h1>Thanks for choosing to provide education here with health connection. please register below</h1>
 
 <form method="POST" action='/provider/signup'>
-<label for='name'>Name: </label>
-<input type ="text" name ="name" id="name">
 
-<label for='title'>Official Title: </label>
-<input type ="title" name ="title" id="title">
 
-<label for='password'>Password: </label>
-<input type ="password" name ="password" id="password">
+    <div class="row">
+        <div class="input-field col s6">
+            <input placeholder="name" type ="name" name ="name" id="name">
 
-<input type= 'submit' class='btn' style="background-color: #dee8d5; color: black">
+           
+        </div>
+        <div class="input-field col s6">
+            <input placeholder="Official Title" type ="title" name ="title" id="title">
+        </div>
+     </div>
+     <div class="row">
+        <div class="col">
+            <input type ="password" name ="password" id="password">
+            <label for='password'>Password: </label>
+        </div>
+
+        <input type= 'submit' class='btn' style="background-color: #dee8d5; color: black">
+    </div>
 </form> 
 

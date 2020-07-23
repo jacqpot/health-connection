@@ -1,12 +1,30 @@
 <h1>  Welcome <%= @provider.name.capitalize %>! </h1>
  <br>
 
-    <body>
-      <div class="container">
-        <!-- Page Content goes here -->
-        <a href = "/edu/new"class='btn' style="background-color: #dee8d5; color: black">create content</a>
-        <a href = "/edu/index"class='btn' style="background-color: #dee8d5; color: black">My educational content</a>
-        <a href="/provider/logout"class='btn' style="background-color: #dee8d5; color: black">Logout</a>
-
-      </div>
-    </body>
+  <div class="row">
+    <div class="col">
+        <div class="card #D5C7BC">
+            <div class="card-content white-text">
+       
+              <a href = "/edu/new"class='btn' style="background-color: #dee8d5; color: black">create content</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="background-color #D5C7BC">
+          <div class="card-content white-text">
+       
+            <a href = "/edu/index"class='btn' style="background-color: #dee8d5; color: black">My educational content</a>
+          </div>
+        </div>
+    </div>
+    <div class="col s12">
+        <div class="card" style="background-color #D5C7BC">
+          <div class="card-content white-text">
+       
+            <a href="/provider/logout"class='btn' style="background-color: #dee8d5; color: black">Logout</a>
+              
+          </div>
+        </div>
+    </div>
+  </div>
