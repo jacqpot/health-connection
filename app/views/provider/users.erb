@@ -1,0 +1,12 @@
+<%if @users%>
+    <ul>
+        <li><%@users.each do |user|%>
+            <h1><%=user.name%></h1>
+            <p><%=user.post.count%></p>
+        <%end%></li>
+    </ul>
+    <% else %>
+    <h1>You dont have any Patients on health connection yet.</h1>
+<%end%>
+    <a href="/provider/logout" class='btn' style="background-color: #ac92a6; color: black">logout</a>
+    <a href="/provider/homepage" class='btn' style="background-color: #ac92a6; color: black"> homepage</a>

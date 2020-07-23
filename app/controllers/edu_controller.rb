@@ -2,6 +2,7 @@ class EduController < ApplicationController
 
     get '/edu/index' do 
         @provider = current_provider.edu 
+
         erb :'/edu/index'
     end
     get '/edu/new' do 
@@ -10,6 +11,7 @@ class EduController < ApplicationController
 
     post '/edu/new' do 
         @edu = current_provider.edu.create(title: params[:title], content: params[:content])
+        binding.pry        
         redirect to :'/edu/index'
     end
 
@@ -46,5 +48,7 @@ class EduController < ApplicationController
         edu.destroy
         redirect "/edu/index"
     end
+
+
 
 end

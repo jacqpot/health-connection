@@ -31,7 +31,7 @@ class UserController < ApplicationController
 
     post '/user/signup' do
         @user = User.create(name: params[:name], password: params[:password], provider_id: params[:provider_id])
-        binding.pry
+        
         erb :"/user/login"
     end
 

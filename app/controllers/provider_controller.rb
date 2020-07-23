@@ -27,4 +27,8 @@ class ProviderController < ApplicationController
         session.clear
         redirect '/'
     end
+    get '/provider/patients' do
+        @users = current_provider.user
+        erb :'/provider/users'
+    end
 end

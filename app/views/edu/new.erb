@@ -1,9 +1,17 @@
-<form action="/edu/new" method="post">
 
-<label for="title">Title of your blog post:</label>
-<input type="text" name="title" id="title">
 
-<label for="content">Enter your blog content here:</label>
-<input class="flow-text" type="text" name="content" id="content">
-<input type="submit" value="create edu"class='btn' style="background-color: #ac92a6; color: black">
-</form>
+
+ 
+    <form action="/edu/new" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="title" name="title" class="materialize-textarea"></textarea>
+            <label for="title">Title of your blog post:</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="content" name="content" class="materialize-textarea"></textarea>
+          <label for="content">Enter your blog content here:</label>
+        </div>
+      </div>
+        <input type="submit" value="create edu"class='btn' style="background-color: #ac92a6; color: black">
+    </form>
