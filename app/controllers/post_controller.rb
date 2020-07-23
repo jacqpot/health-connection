@@ -2,17 +2,21 @@ class PostController < ApplicationController
 
 
     get "/post/index" do
+     check_login
+
       @user = current_user.post
         erb :"/post/index"
     end
   
   
     get "/post/new" do
+      check_login
       erb :"/post/new"
     end
   
   
     post "/post/new" do
+      check_login
       @post = current_user.post.create(title: params[:title], content: params[:content])
 
         redirect to :'/post/index'
@@ -21,6 +25,7 @@ class PostController < ApplicationController
   
   
     get "/post/:id" do
+      check_login
       # if logged_in? 
       #   # binding.pry
       @post = Post.find(params[:id])
@@ -33,6 +38,7 @@ class PostController < ApplicationController
   
   
     get "/post/:id/edit" do
+      check_login
       if logged_in? && Post.find_by(id: params[:id]).user == current_user
         @post = Post.find(params[:id])
         erb :'/post/edit'
@@ -44,6 +50,7 @@ class PostController < ApplicationController
   
   
     patch "/post/:id" do
+      check_login
       post = Post.find(params[:id])
       post.content = (params[:content])
       if post.save
@@ -55,6 +62,7 @@ class PostController < ApplicationController
     end
   
     delete "/post/:id/delete" do
+      check_login
       post = Post.find(params[:id])
       post.destroy
       redirect "/post/index"

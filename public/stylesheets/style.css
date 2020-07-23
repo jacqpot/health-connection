@@ -99,4 +99,7 @@
     background-color: #fedc97;
 
   }
+  .user-card {
+    max-width: 500px;
+  }
 }

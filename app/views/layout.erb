@@ -20,7 +20,7 @@
  
   </head>
   <body>
-  <%if !!logged_in?%>
+  <%if current_user%>
     <header class="top-nav" >
       <div class="navbar-fixed"> 
           <nav>
@@ -30,6 +30,21 @@
                 <li><a style="color:#01579b" href="/post/index">My Posts</a></li>
                 <li><a style="color:#01579b"href="/post/new">New Post</a></li>
                 <li><a style="color:#01579b"href="/user/logout">Log Out</a></li>
+              </ul>
+            </div>
+          </nav>
+      </div>
+    </header>
+  <%elsif current_provider%>
+      <header class="top-nav" >
+      <div class="navbar-fixed"> 
+          <nav>
+            <div class="nav-wrapper" style="background-color: #d5c7bc">
+              <a href="#" class="brand-logo"><img src="https://cdn.imgbin.com/25/12/6/imgbin-human-brain-logo-upper-SwMBg8ftFyu8j0VM9wkeciEjw.jpg" style="height:45px; margin-left:50px; margin-top:8px;"></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 50px;">
+                <li><a style="color:#01579b" href="/edu/index">My Blogs</a></li>
+                <li><a style="color:#01579b"href="/edu/new">new blog Post</a></li>
+                <li><a style="color:#01579b"href="/provider/logout">Log Out</a></li>
               </ul>
             </div>
           </nav>

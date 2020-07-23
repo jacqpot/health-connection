@@ -1,14 +1,22 @@
-<h1>  Welcome <%= @user.name.capitalize %>! </h1>
- <br>
+<div class="row center">
+  <h1>  Welcome <%= @user.name.capitalize %>! </h1>
+  <br>
 
 
-      <div class="container">
-        <div class="row">
+
+    <a href = "/post/new"class='btn' style="background-color: #dee8d5; color: black">create blog post</a>
+    <a href = "/post/index"class='btn' style="background-color: #dee8d5; color: black">My Blog posts</a>
+    <a href="/user/logout"class='btn' style="background-color: #dee8d5; color: black">Logout</a>
+      <h1>Here are your <%=@user.provider.name%>s latest posts</h1>
+</div>
+        <div class="row center">
           <%if @user.provider%> 
-            <%@user.provider.edu.each do |edu| %>
-              <div class="row">
-                <div class="col">
-                  <div class="card-panel hoverable" style="background-color: #dee8d5">
+            <%posts = @user.provider.edu.last(2)%>
+            <%posts.each do |edu| %>
+              <div class="row center">
+                <div class="col s12 m12">
+                  <div class="card-panel hoverable user-card" style="background-color: #dee8d5">
+                    
                     <span class="card-title"><h1><%=edu.title %></h1></span>
                     <p class="truncate"> <%=edu.content%> </p>
               
@@ -19,13 +27,9 @@
               </div>
               <%end%>
           <%end %>
-        </div>
 
 
 
-        <a href = "/post/new"class='btn' style="background-color: #dee8d5; color: black">create blog post</a>
-        <a href = "/post/index"class='btn' style="background-color: #dee8d5; color: black">My Blog posts</a>
-        <a href="/user/logout"class='btn' style="background-color: #dee8d5; color: black">Logout</a>
 
       </div>
 

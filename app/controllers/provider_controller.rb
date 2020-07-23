@@ -7,11 +7,15 @@ class ProviderController < ApplicationController
         erb :'/provider/login'
     end
     get '/provider/homepage' do 
-        @provider = Provider.find_by_id(session[user_id])
-        erb :'/provider/view'
+        check_login
+
+            @provider = Provider.find_by(id: session[provider_id])
+            erb :'/provider/view'
+
 
     end
     post "/provider/login" do 
+
         @provider = Provider.find_by(:name => params[:name])
         if @provider && @provider.authenticate(params[:password])
             session[:provider_id] = @provider.id
@@ -28,6 +32,8 @@ class ProviderController < ApplicationController
         redirect '/'
     end
     get '/provider/patients' do
+        check_login
+
         @users = current_provider.user
         erb :'/provider/users'
     end

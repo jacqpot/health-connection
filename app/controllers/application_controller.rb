@@ -29,5 +29,10 @@ class ApplicationController < Sinatra::Base
     def current_provider
       Provider.find_by(id: session[:provider_id]) if session[:provider_id]
     end
+    def check_login
+      if !logged_in_p? && !logged_in?
+        redirect to '/user' 
+      end
+    end
 	end
 end
