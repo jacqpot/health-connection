@@ -15,8 +15,7 @@ class EduController < ApplicationController
     post '/edu/new' do 
         check_login
 
-        @edu = current_provider.edu.create(title: params[:title], content: params[:content])
-        binding.pry        
+        @edu = current_provider.edu.create(title: params[:title], content: params[:content])     
         redirect to :'/edu/index'
     end
 

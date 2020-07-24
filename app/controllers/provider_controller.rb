@@ -9,7 +9,7 @@ class ProviderController < ApplicationController
     get '/provider/homepage' do 
         check_login
 
-            @provider = Provider.find_by(id: session[provider_id])
+            @provider = Provider.find_by(id: session[:provider_id])
             erb :'/provider/view'
 
 
