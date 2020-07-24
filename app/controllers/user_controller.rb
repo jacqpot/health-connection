@@ -20,8 +20,7 @@ class UserController < ApplicationController
     end
     get '/user/homepage' do 
         check_login
-
-        @user = User.find_by_id(session[user_id])
+        @user = User.find_by_id(session[:user_id])
         erb :'/user/view'
     end
 

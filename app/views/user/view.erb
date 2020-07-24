@@ -7,8 +7,9 @@
     <a href = "/post/new"class='btn' style="background-color: #dee8d5; color: black">create blog post</a>
     <a href = "/post/index"class='btn' style="background-color: #dee8d5; color: black">My Blog posts</a>
 
-      <h1>Here are your <%=@user.provider.name%>s latest posts</h1>
+      <h1>Here are <%=@user.provider.name.capitalize%>'s latest posts</h1>
 </div>
+
         <div class="row center">
           <%if @user.provider%> 
             <%posts = @user.provider.edu.last(2)%>
@@ -21,15 +22,13 @@
                     <p class="truncate"> <%=edu.content%> </p>
               
                   </div>
-            
                 </div>
           
               </div>
-              <%end%>
+            <%end%>
           <%end %>
+        </div>
 
 
-
-
-      </div>
+</div>
 
