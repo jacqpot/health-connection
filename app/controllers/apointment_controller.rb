@@ -31,7 +31,7 @@ class ApointmentController < ApplicationController
     end
     get '/apointment/:id/edit' do 
         check_login
-        if logged_in_p? && apointment.find_by(id: params[:id]).user == current_user
+        if logged_in? && apointment.find_by(id: params[:id]).user == current_user
             @apointment = apointment.find(params[:id])
             erb :'/apointment/edit'
         else
