@@ -5,7 +5,11 @@
             <%@user.each do |apointment|%>
             <div class="card-panel hoverable" style="background-color: #dee8d5">
                 <div class="card-content">
-                    <span class="card-title"><%=apointment.reason%></span>
+                    <span class="card-title">
+                        <a href="/apointment/<%=apointment.id%>">
+                            <%=apointment.reason%>
+                        </a>
+                    </span>
                     <p> <%=apointment.date_and_time%></p>
                 </div>
             </div>
