@@ -22,7 +22,7 @@ class ApointmentController < ApplicationController
     get '/apointment/:id' do 
         check_login
 
-        @apointment = apointment.find(params[:id])
+        @apointment = Apointment.find(params[:id])
         if @apointment.user == current_user
             erb :'/apointment/view'
         else
@@ -31,8 +31,8 @@ class ApointmentController < ApplicationController
     end
     get '/apointment/:id/edit' do 
         check_login
-        if logged_in? && apointment.find_by(id: params[:id]).user == current_user
-            @apointment = apointment.find(params[:id])
+        if logged_in? && Apointment.find_by(id: params[:id]).user == current_user
+            @apointment = Apointment.find(params[:id])
             erb :'/apointment/edit'
         else
             @user = current_user
@@ -43,7 +43,7 @@ class ApointmentController < ApplicationController
 
     patch '/apointment/:id' do 
         check_login
-        @apointment = apointment.find(params[:id])
+        @apointment = Apointment.find(params[:id])
         @apointment.content = (params[:content])
         if @apointment.save
             redirect to "/apointment/#{@apointment.id}"
@@ -53,7 +53,7 @@ class ApointmentController < ApplicationController
     end
     delete "/apointment/:id/delete" do 
         check_login
-        apointment = apointment.find(params[:id])
+        apointment = Apointment.find(params[:id])
         apointment.destroy
         redirect "/apointment/index"
     end
