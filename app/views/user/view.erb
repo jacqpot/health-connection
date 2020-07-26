@@ -6,6 +6,17 @@
 
     <a href = "/post/new"class='btn' style="background-color: #dee8d5; color: black">create blog post</a>
     <a href = "/post/index"class='btn' style="background-color: #dee8d5; color: black">My Blog posts</a>
+    <div class="wrapper">
+    <%=@apointment.last do |apointment| %>
+    <%=apointment.reason%>
+    <%=apointment.date_and_time%>
+    
+    </div>
+
+
+
+
+
 
       <h1>Here are <%=@user.provider.name.capitalize%>'s latest posts</h1>
 </div>
