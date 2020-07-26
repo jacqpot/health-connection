@@ -1,4 +1,16 @@
 <div class="container">
     <h1>My Apointments</h1>
     <a href="/apointment/new" class="btn" style="background-color: #ac92a6; color: black">Create a apointment reminder</a>
+        <div class="row">
+            <%@user.each do |apointment|%>
+            <div class="card-panel hoverable" style="background-color: #dee8d5">
+                <div class="card-content">
+                    <span class="card-title"><%=apointment.reason%></span>
+                    <p> <%=apointment.date_and_time%></p>
+                </div>
+            </div>
+            <%end%>
+        </div>
+
+
 </div>
