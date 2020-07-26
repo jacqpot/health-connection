@@ -1,0 +1,20 @@
+<h1> <%=@apointment.reason%> </h1>
+<h3> <%=@apointment.date_and_time%> </h3>
+
+<div class="row">
+    <div class="col">
+        <form action="/apointment/<%=@apointment.id%>/delete" method="post">
+        <a href="/apointment/<%=@apointment.id%>/edit" class = "btn" style="background-color: #ac92a6; color: black" id="edit apointment">edit apointment</a>
+            <input type="hidden" id="hidden" name="_method"  value="DELETE">
+            <input type="submit" value="Delete apointment" class = "btn" style="background-color: #ac92a6; color: black" name="Delete apointment" id="Delete apointment">
+            <a href="/apointment/index" class = "btn" style="background-color: #ac92a6; color: black">My apointments</a>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
