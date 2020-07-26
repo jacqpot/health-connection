@@ -1,0 +1,8 @@
+<form action="/apointment/<%=@apointment.id%>" method="post">
+
+<input type="hidden" id="hidden" name="_method" value="PATCH">
+reason for apointment: <input type="text" name="reason" value="<%=@apointment.reason%>"  id="reason">
+date and time of apointment: <input type="text" name="date_and_time" value="<%=@apointment.date_and_time%>" id="date_and_time">
+<input type="submit" name="submit" class='btn' style="background-color: #ac92a6; color: black">
+
+</form>
