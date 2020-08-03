@@ -9,14 +9,7 @@
     <a href="/apointment/new"class='btn' style="background-color: #dee8d5; color: black">create a new apointment reminder</a>
     <a href = "/apointment/index"class='btn' style="background-color: #dee8d5; color: black">My Apointments</a>
 
-    <div class="wrapper" style="background-color: #dee8d5; color: black">
-    <%if @apointment%>
-      <%@apointment.each do |apointment| %>
-        <%=apointment.reason%>
-        <%=apointment.date_and_time%>
-      <%end%>
-    <%end%>
-    </div>
+  
 
       <h1>Here are <%=@user.provider.name.capitalize%>'s latest posts</h1>
 </div>

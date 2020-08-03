@@ -52,6 +52,7 @@ class PostController < ApplicationController
     patch "/post/:id" do
       check_login
       post = Post.find(params[:id])
+      post.title = (params[:title])
       post.content = (params[:content])
       if post.save
         redirect to "/post/#{post.id}"

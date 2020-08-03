@@ -44,7 +44,8 @@ class ApointmentController < ApplicationController
     patch '/apointment/:id' do 
         check_login
         @apointment = Apointment.find(params[:id])
-        @apointment.content = (params[:content])
+        @apointment.reason = (params[:reason])
+        @apointment.date_and_time = (params[:date_and_time])
         if @apointment.save
             redirect to "/apointment/#{@apointment.id}"
         else

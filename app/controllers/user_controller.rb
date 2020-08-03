@@ -39,8 +39,11 @@ class UserController < ApplicationController
     post '/user/signup' do
 
         @user = User.create(name: params[:name], password: params[:password], provider_id: params[:provider_id])
-        
-        erb :"/user/login"
+        if @user.valid?
+            erb :"/user/login"
+        else  
+            redirect to '/user/signup'
+        end
     end
 
      get '/user/logout' do 
