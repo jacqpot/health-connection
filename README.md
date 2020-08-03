@@ -3,7 +3,7 @@ Welcome to health connection.
 
 to use:
 Fork and clone 
-in console, go to desired rirectory and run git clone "copied ssh here"
+in console, go to desired directory and run git clone "copied ssh here"
 bundle install
 run shotgun
 track your health.
