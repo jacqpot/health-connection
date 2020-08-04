@@ -30,7 +30,6 @@ class UserController < ApplicationController
             @user = User.find_by(:name => params[:name])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            @session = session
   
             erb :"/user/view"
         end

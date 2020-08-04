@@ -4,7 +4,7 @@ class PostController < ApplicationController
     get "/post/index" do
      check_login
 
-      @user = current_user.post
+      @user = current_user.post.order(title: :desc)
         erb :"/post/index"
     end
   
@@ -18,8 +18,13 @@ class PostController < ApplicationController
     post "/post/new" do
       check_login
       @post = current_user.post.create(title: params[:title], content: params[:content])
+        if @post.valid?
 
-        redirect to :'/post/index'
+          redirect to :'/post/index'
+        else
+        erb :"/post/new"
+        end
+      
  
     end
   
@@ -32,7 +37,7 @@ class PostController < ApplicationController
       if @post.user == current_user
         erb :"/post/view"
       else 
-        redirect to '/user/view'
+        redirect to '/user/homepage'
       end
     end
   
